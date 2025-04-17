@@ -101,7 +101,7 @@ Trendzio Team`;
     const fetchOrders = async () => {
       try {
         const ordersResponse = await fetchWithBackoff(
-          "https://trendy.onrender.com/api/order/orders"
+          "https://trendybazarr.onrender.com/api/order/orders"
         );
         const ordersData = await ordersResponse.json();
        if(category=== "default"){
@@ -125,7 +125,7 @@ Trendzio Team`;
   const updateOrderStatusInBackend = async (orderId, newStatus) => {
     try {
       await axios.put(
-        `https://trendy.onrender.com/api/order/put/${orderId}`,
+        `https://trendybazarr.onrender.com/api/order/put/${orderId}`,
         {
           orderStatus: newStatus,
         }
@@ -138,7 +138,7 @@ Trendzio Team`;
   const updateDeliveryDateInBackend = async (orderId, newDeliveryDate) => {
     try {
       await axios.put(
-        `https://trendy.onrender.com/api/order/put/${orderId}`,
+        `https://trendybazarr.onrender.com/api/order/put/${orderId}`,
         {
           deliveryDate: newDeliveryDate,
         }
@@ -151,7 +151,7 @@ Trendzio Team`;
   const updatePaymentStatusInBackend = async (orderId, newStatus) => {
     try {
       await axios.put(
-        `https://trendy.onrender.com/api/order/put/${orderId}`,
+        `https://trendybazarr.onrender.com/api/order/put/${orderId}`,
         {
           paymentStatus: newStatus,
         }

@@ -13,7 +13,7 @@ const LoginPage = ({ setAdmin }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const url = "https://trendy.onrender.com/api/auth/login";
+      const url = "https://trendybazarr.onrender.com/api/auth/login";
       const response = await axios.post(url, formData);
       const data = response.data;
       localStorage.setItem('authToken',data.token)

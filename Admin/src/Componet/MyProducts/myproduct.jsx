@@ -87,7 +87,7 @@ export  default function MyProduct() {
       setIsLoading(true);
       try {
         const token = localStorage.getItem("authToken");
-        const url = `https://trendy.onrender.com/api/data/gets`;
+        const url = `https://trendybazarr.onrender.com/api/data/gets`;
   
         const response = await axios.get(url, {
           headers: {
@@ -136,7 +136,7 @@ export  default function MyProduct() {
         dangerMode: true,
       }).then(async (willDelete) => {
         if (willDelete) {
-          const url = `https://trendy.onrender.com/api/data/delete/${productId}`;
+          const url = `https://trendybazarr.onrender.com/api/data/delete/${productId}`;
           const token = localStorage.getItem("authToken");
 
           // Delete request

@@ -232,7 +232,7 @@ const ProductForm = () => {
     const token = localStorage.getItem("authToken");
     try {
       const response = axios.post(
-        "https://trendy.onrender.com/api/data/upload",
+        "https://trendybazarr.onrender.com/api/data/upload",
 
         formData,
         {

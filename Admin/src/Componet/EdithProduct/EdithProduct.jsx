@@ -36,7 +36,7 @@ const EditProduct = () => {
 
     const token = localStorage.getItem("authToken");
 
-    axios.get(`https://trendy.onrender.com/api/data/get/${id}`, {
+    axios.get(`https://trendybazarr.onrender.com/api/data/get/${id}`, {
       headers: {
         Authorization: `Bearer ${token}`,
       },
@@ -171,7 +171,7 @@ const EditProduct = () => {
 
     try {
       const response = await axios.put(
-        `https://trendy.onrender.com/api/data/edit/${id}`, // await added
+        `https://trendybazarr.onrender.com/api/data/edit/${id}`, // await added
         formData, {
           headers: {
             Authorization: `Bearer ${token}`,
