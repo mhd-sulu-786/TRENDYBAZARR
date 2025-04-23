@@ -15,8 +15,21 @@ function Products() {
     sortBy: 'newest'
   });
 
+  const [Products, setProducts] = useState([]);
+  const Product_DATA_GET = async () => {
+    try {
+      const response = await fetch('https://trendybazarr.onrender.com/api/data/gets');
+      const data = await response.json();
+      console.log(data);
+      setProducts(data.data);
+    } catch (error) {
+      console.error('Error fetching data:', error);
+    }
+  };
+
   useEffect(() => {
     window.scrollTo(0, 0);
+    Product_DATA_GET();
   }, []);
 
   const showToast = (message) => {
@@ -26,7 +39,7 @@ function Products() {
   };
 
   // Filter and sort products
-  const filteredProducts = Object.values(products).filter(product => {
+  const filteredProducts = Object.values(Products||products).filter(product => {
     const matchesCategory = !filters.category || product.category.toLowerCase() === filters.category.toLowerCase();
     const matchesPriceRange = (!filters.priceRange.min || product.price >= filters.priceRange.min) &&
                              (!filters.priceRange.max || product.price <= filters.priceRange.max);

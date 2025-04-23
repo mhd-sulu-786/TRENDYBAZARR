@@ -1,4 +1,7 @@
-export const products = {
+
+
+
+ export const products = {
   // Fashion
   'fashion-1': {
     id: 'fashion-1',

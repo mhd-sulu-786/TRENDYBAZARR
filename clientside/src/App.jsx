@@ -34,6 +34,19 @@ import ProductPage from './pages/ProductPage';
 import AdminPanel from './pages/AdminPanel';
 
 function App() {
+
+const [Products, setProducts] = useState([]);
+const Product_DATA_GET = async () => {
+  try {
+    const response = await fetch('https://trendybazarr.onrender.com/api/data/gets');
+    const data = await response.json();
+    console.log(data);
+    setProducts(data.data);
+  } catch (error) {
+    console.error('Error fetching data:', error);
+  }
+};
+
   const [isDarkMode, setIsDarkMode] = useState(false);
 
   const toggleDarkMode = () => {
@@ -45,7 +58,8 @@ function App() {
     const { pathname } = useLocation();
   
     React.useEffect(() => {
-      window.scrollTo(0, 0);
+      Product_DATA_GET();
+
     }, [pathname]);
   
     return null;
@@ -65,13 +79,13 @@ function App() {
                     <Hero />
                     <Features />
                     <Categories />
-                    <FeaturedProducts />
+                    <FeaturedProducts Products={Products} />
                   </div>
                 </main>
               } />
-              <Route path="/products" element={<Products />} />
-              <Route path="/category/:category" element={<CategoryPage />} />
-              <Route path="/product/:id" element={<ProductPage />} />
+              <Route path="/products" element={<Products Products={Products} />} />
+              <Route path="/category/:category" element={<CategoryPage Products={Products} />} />
+              <Route path="/product/:id" element={<ProductPage Products={Products} />} />
               <Route path="/login" element={<Login />} />
               <Route path="/register" element={<Register />} />
               <Route path="/profile" element={<Profile />} />
