@@ -66,7 +66,7 @@ const Product_DATA_GET = async () => {
   };
 
   return (
-    <Router basename="/">
+    <Router>
       <ScrollToTop />
       <div className={`min-h-screen ${isDarkMode ? 'dark' : ''}`}>
         <Layout>
