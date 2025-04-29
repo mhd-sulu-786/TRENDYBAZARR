@@ -8,7 +8,7 @@ const __dirname = dirname(__filename);
 
 export default defineConfig({
   plugins: [react()],
-  base: '/TrendyBazarr/',
+  base: '/',
   optimizeDeps: {
     exclude: ['lucide-react'],
   },
