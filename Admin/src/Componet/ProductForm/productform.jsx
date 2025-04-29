@@ -244,6 +244,9 @@ const ProductForm = () => {
       setIsLoading(false);
       swal("Success", "Product added successfully!", "success");
       resdata();
+      window.location.reload();
+
+
       console.log("Product added:", (await response).status);
     } catch (error) {
       console.error("Error creating product:", error);
