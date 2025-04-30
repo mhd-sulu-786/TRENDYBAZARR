@@ -244,7 +244,7 @@ const ProductForm = () => {
       setIsLoading(false);
       swal("Success", "Product added successfully!", "success");
       resdata();
-      window.location.reload();
+      // window.location.reload();
 
 
       console.log("Product added:", (await response).status);
